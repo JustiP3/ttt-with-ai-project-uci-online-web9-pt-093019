@@ -1,6 +1,10 @@
 require 'pry'
 class Board
-attr_accessor :cells
+attr_writer :cells 
+
+def cells 
+  @cells.freeze 
+end 
 
 def initialize
   self.reset!

@@ -11,6 +11,7 @@ module Players
     attr_reader :corners
 
     def move(board_instance)
+      position = ""
       until(board_instance.valid_move?(position))
         if offence_defence(board_instance) == "0" # offence
           if board_instance.turn_count == 0

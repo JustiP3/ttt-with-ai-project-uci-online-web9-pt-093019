@@ -23,8 +23,8 @@ module Players
           end
         end
       elsif offence_defence(board_instance) == "1" # defence
-        position = opponent_win_combo.find {|index| index == " "} 
-        position = (position.to_i + 1).to_s 
+        position = opponent_win_combo.find {|index| index == " "}
+        position = (position.to_i + 1).to_s
       end
   #    position = rand(9)
   #

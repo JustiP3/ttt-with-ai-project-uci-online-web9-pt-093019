@@ -1,6 +1,6 @@
 require 'pry'
 class Board
-attr_accessor :cell
+attr_accessor :cells
 
 def initialize
   self.reset!

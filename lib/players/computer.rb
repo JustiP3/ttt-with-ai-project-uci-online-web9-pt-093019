@@ -17,16 +17,16 @@ module Players
           position = corners[rand(4)].to_s
         elsif board_instance.turn_count == 1
           position = "5"
-        else 
+        else
           until(board_instance.valid_move?(position))
             position = rand(10)
-          end 
+          end
         end
       elsif offence_defence == "1" # defence
         position = (opponent_win_combo.find {|index| index == " "} + 1).to_s
       end
   #    position = rand(9)
-  #    
+  #
   #    end
   #    position.to_s
     end

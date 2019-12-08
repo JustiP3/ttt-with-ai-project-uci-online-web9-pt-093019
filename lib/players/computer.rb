@@ -4,7 +4,7 @@ module Players
       corners = [1,3,7,9]
       offence_defence = "0" #0 = offence, 1 = defence
 
-      A = Game.WIN_COMBINATIONS
+      a = Game.WIN_COMBINATIONS
 
       if board_instance.turn_count == 0
         position = corners[rand(0,4)].to_s

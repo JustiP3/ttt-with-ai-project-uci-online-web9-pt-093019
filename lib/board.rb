@@ -1,10 +1,10 @@
 require 'pry'
 class Board
-attr_writer :cells 
+attr_writer :cells
 
-def cells 
-  @cells.freeze 
-end 
+def cells
+  @cells.freeze
+end
 
 def initialize
   self.reset!

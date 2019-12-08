@@ -31,8 +31,8 @@ module Players
   #    position.to_s
     end
 
-    def offence_defence #0 = offence, 1 = defence
-      offence_defence(board_instance) = "0"
+    def offence_defence(board_instance) #0 = offence, 1 = defence
+      offence_defence = "0"
       Game::WIN_COMBINATIONS.each do |combo|
           temp_combo = combo.select {|index| board_instance.cells[index] != self.token && board_instance.cells[index] != " "}
           if temp_combo.size == 2

@@ -12,7 +12,7 @@ module Players
 
     def move(board_instance)
 
-      if offence_defence == "0" # offence
+      if offence_defence(board_instance) == "0" # offence
         if board_instance.turn_count == 0
           position = corners[rand(4)].to_s
         elsif board_instance.turn_count == 1
@@ -22,7 +22,7 @@ module Players
             position = rand(10)
           end
         end
-      elsif offence_defence == "1" # defence
+      elsif offence_defence(board_instance) == "1" # defence
         position = (opponent_win_combo.find {|index| index == " "} + 1).to_s
       end
   #    position = rand(9)
@@ -32,7 +32,7 @@ module Players
     end
 
     def offence_defence #0 = offence, 1 = defence
-      offence_defence = "0"
+      offence_defence(board_instance) = "0"
       Game::WIN_COMBINATIONS.each do |combo|
           temp_combo = combo.select {|index| board_instance.cells[index] != self.token && board_instance.cells[index] != " "}
           if temp_combo.size == 2

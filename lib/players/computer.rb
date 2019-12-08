@@ -11,18 +11,19 @@ module Players
     attr_reader :corners
 
     def move(board_instance)
-      position = ""
+      position = " "
+      
       until(board_instance.valid_move?(position))
         if offence_defence(board_instance) == "0" # offence
-          if board_instance.turn_count == 0
+          if board_instance.turn_count == 0 # turn 1 
             position = corners[rand(4)].to_s
-          elsif board_instance.turn_count == 1
+          elsif board_instance.turn_count == 1 #turn 2 
             if board_instance.valid_move?("5")
               position = "5"
             else
               position = corners[rand(4)].to_s
             end
-          else
+          else #turns 3+ 
             position = rand(10)
           end
         elsif offence_defence(board_instance) == "1" # defence

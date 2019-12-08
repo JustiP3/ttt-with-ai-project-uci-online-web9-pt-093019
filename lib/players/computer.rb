@@ -3,7 +3,7 @@ module Players
     def move(board_instance)
       corners = [1,3,7,9]
       offence_defence = "0" #0 = offence, 1 = defence
-      binding.pry 
+      binding.pry
       a = Game::WIN_COMBINATIONS
 
       if board_instance.turn_count == 0

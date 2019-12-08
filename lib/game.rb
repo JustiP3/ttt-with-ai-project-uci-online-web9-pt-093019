@@ -93,7 +93,7 @@ class Game
   def play
     escape_flag = ""
     until over? || escape_flag == "exit"
-      board.display unless player_1.class == Players::Human && player_2.class == Players::Computer 
+      board.display unless player_1.class == Players::Human && player_2.class == Players::Computer
       escape_flag = turn
     end
     board.display unless escape_flag == "exit"

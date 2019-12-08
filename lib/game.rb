@@ -83,7 +83,7 @@ class Game
     pos = current_player.move(board)
     board.update(pos, current_player) unless pos == 'exit'
     binding.pry
-    if player_2.class == Computer && player_1.class == Computer
+    if player_2.class == Players::Computer && player_1.class == Players::Computer
       puts "Press enter to continue."
       gets
     end

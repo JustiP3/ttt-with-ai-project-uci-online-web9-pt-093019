@@ -12,10 +12,6 @@ module Players
 
     def move(board_instance)
 
-
-
-
-
       if offence_defence == "0" # offence
         if board_instance.turn_count == 0
           position = corners[rand(4)].to_s
@@ -23,7 +19,7 @@ module Players
           position = "5"
         end
       elsif offence_defence == "1" # defence
-
+        position = (opponent_win_combo.find {|index| index == " "} + 1).to_s
       end
   #    position = rand(9)
   #    until(board_instance.valid_move?(position))

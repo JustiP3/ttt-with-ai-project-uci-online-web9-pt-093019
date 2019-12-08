@@ -2,7 +2,7 @@ module Players
   class Computer < Player
 
     def initialize(token)
-      @token = token 
+      @token = token
       @opponent_win_combo = []
       @corners = [1,3,7,9]
     end

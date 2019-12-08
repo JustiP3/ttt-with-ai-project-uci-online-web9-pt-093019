@@ -7,7 +7,7 @@ module Players
       a = Game::WIN_COMBINATIONS
 
       if board_instance.turn_count == 0
-        position = corners[rand(0,4)].to_s
+        position = corners[rand(4)].to_s
       elsif board_instance.turn_count == 1
         position = "5"
       end

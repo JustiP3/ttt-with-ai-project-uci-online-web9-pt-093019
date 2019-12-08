@@ -11,21 +11,24 @@ module Players
     attr_reader :corners
 
     def move(board_instance)
-
-      if offence_defence(board_instance) == "0" # offence
-        if board_instance.turn_count == 0
-          position = corners[rand(4)].to_s
-        elsif board_instance.turn_count == 1
-          position = "5"
-        else
-          until(board_instance.valid_move?(position))
+      until(board_instance.valid_move?(position))
+        if offence_defence(board_instance) == "0" # offence
+          if board_instance.turn_count == 0
+            position = corners[rand(4)].to_s
+          elsif board_instance.turn_count == 1
+            if board_instance.valid_move?("5")
+              position = "5"
+            else 
+              position = corners[rand(4)].to_s
+            end                
+          else          
             position = rand(10)
           end
+        elsif offence_defence(board_instance) == "1" # defence
+          position = opponent_win_combo.find {|index| index == " "}
+          position = (position.to_i + 1).to_s
         end
-      elsif offence_defence(board_instance) == "1" # defence
-        position = opponent_win_combo.find {|index| index == " "}
-        position = (position.to_i + 1).to_s
-      end
+      end 
   #    position = rand(9)
   #
   #    end

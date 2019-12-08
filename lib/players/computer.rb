@@ -14,6 +14,7 @@ module Players
       position = " "
 
       until(board_instance.valid_move?(position))
+              binding.pry
         if offence_defence(board_instance) == "0" # offence
           if board_instance.turn_count == 0 # turn 1
             position = corners[rand(4)].to_s
@@ -47,7 +48,6 @@ module Players
           end
       end
       offence_defence
-      binding.pry
     end
 
   end #class

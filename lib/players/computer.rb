@@ -47,6 +47,7 @@ module Players
           end
       end
       offence_defence
+      binding.pry
     end
 
   end #class
